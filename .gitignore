@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local data
+data/benchmark/*
+!data/benchmark/README.md
+
+data/corpus/*
+!data/corpus/README.md
+
+data/external/*
+!data/external/README.md
+
+# Runtime artifacts and results
+artifacts/*
+!artifacts/.gitignore
+
+outputs/
+results/
+logs/
+runs/
+checkpoints/
+
+*.log
+
+# Generated result/data files
+*_results.csv
+*_metrics.csv
+*_predictions.csv
+*_predictions.jsonl
+*_generations.jsonl
+*_outputs.jsonl
+
+# Models/checkpoints
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Caches
+hf_cache/
+.cache/
+
+# Editors/system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
