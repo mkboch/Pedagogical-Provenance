@@ -1,48 +1,68 @@
 # Reproducibility
 
-This repository releases source code, documentation, and two sequence-policy evaluation sets used in the canonical and alternate-form controller analyses.
+This repository is the curated public code release for PACER.
 
-## Released Evaluation Sets
+The release intentionally separates source code and small redistributable
+benchmark inputs from generated results and source-derived course data.
 
-```text
-data/benchmark/canonical_multiconcept_sequence.jsonl
-data/benchmark/alternate_form_sequence.jsonl
-```
+## Released evaluation sets
 
-These contain 228 canonical multi-concept tasks and 96 matched alternate-surface-form tasks.
+    data/benchmark/canonical_multiconcept_sequence.jsonl
+    data/benchmark/alternate_form_sequence.jsonl
 
-## Inputs Not Redistributed
+These contain 228 canonical multi-concept tasks and 96 matched
+alternate-surface-form tasks.
+
+## Inputs not redistributed
 
 The following are not included in Git:
 
 - raw course materials
-- the 1,000-task core QA benchmark, whose reference answers contain source-derived instructional text
+- the 1,000-task core QA benchmark, whose reference answers contain
+  source-derived instructional text
 - generated model responses
 - experimental result tables
-- model weights
-- checkpoints
+- candidate-feature matrices and other generated intermediates
+- model weights and checkpoints
 - caches
 - private validation packages
 
-The released scripts document the local paths expected for these inputs.
+The released code documents the expected local paths for these inputs.
 
-## Generated Outputs
+## Generated outputs
 
-Generated outputs are written under:
+Runtime outputs belong under:
 
-```text
-artifacts/
-```
+    artifacts/
 
-This directory is ignored by Git except for its placeholder file.
+The directory is ignored by Git except for its placeholder file.
 
-## Integrity Verification
+Generated results should not be committed to the repository.
+
+## Main experiment map
+
+See docs/EXPERIMENT_MAP.md.
+
+## Post-freeze verification
+
+Two targeted verification utilities are provided under:
+
+    src/audit/
+
+They cover the lecture-prior scale/boundary analysis and the matched
+canonical/alternate paired-rescore summary.
+
+See docs/POSTFREEZE_AUDITS.md.
+
+These utilities consume local frozen intermediates. They do not redistribute
+those intermediates or generated audit results.
+
+## Integrity verification
 
 Run:
 
-```bash
-sha256sum -c CODE_CHECKSUMS.sha256
-sha256sum -c BENCHMARK_CHECKSUMS.sha256
-```
+    sha256sum -c CODE_CHECKSUMS.sha256
+    sha256sum -c BENCHMARK_CHECKSUMS.sha256
 
-Every released Python source file and both released sequence-policy benchmark artifacts should return `OK`.
+Every released Python source file and both released sequence-policy benchmark
+inputs should return OK.

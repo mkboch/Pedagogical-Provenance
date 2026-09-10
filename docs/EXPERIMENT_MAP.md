@@ -92,3 +92,20 @@ src/external/run_external_course_aware_controller.py
 ```
 
 External validation is reported separately from the within-course benchmark and is not pooled with it.
+
+
+## Post-freeze Verification
+
+    src/audit/run_lecture_prior_boundary_audit.py
+    src/audit/summarize_paired_rescore.py
+
+The lecture-prior utility evaluates the frozen and extended diagnostic weight
+grids, the strict lecture-block threshold, grouped fold selection, and the
+parameter-free same-lecture-first comparator.
+
+The paired-rescore utility independently recomputes the matched canonical and
+alternate summary statistics and exact McNemar test from a locally generated
+paired prediction table.
+
+Generated audit tables are not tracked by Git. See
+docs/POSTFREEZE_AUDITS.md.

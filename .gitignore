@@ -59,3 +59,35 @@ hf_cache/
 .idea/
 .DS_Store
 Thumbs.db
+
+# PACER additional generated-analysis exclusions
+*.parquet
+*.feather
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+candidate_features.csv
+position_aware_candidate_features.csv
+paired_*_predictions.csv
+paired_*_discordant_items.csv
+paired_*_summary.json
+
+# Manuscript/submission artifacts are maintained separately
+paper/
+manuscript/
+submission/
+*.tex
+*.aux
+*.bbl
+*.blg
+*.out
+*.synctex.gz
+*.pdf
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
