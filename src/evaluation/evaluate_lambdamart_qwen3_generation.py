@@ -40,6 +40,10 @@ SEM_MODEL = (
     "sentence-transformers/all-mpnet-base-v2"
 )
 
+SEM_MODEL_REVISION = (
+    "e8c3b32edf5434bc2275fc9bab85f82640a19130"
+)
+
 SEED = 20260822
 N_BOOT = 100000
 N_PERM = 100000
@@ -213,6 +217,7 @@ print(SEM_MODEL)
 
 sem = SentenceTransformer(
     SEM_MODEL,
+    revision=SEM_MODEL_REVISION,
     device="cpu",
 )
 
@@ -601,6 +606,8 @@ metadata = {
         "verbatim archived lexical_f1",
     "semantic_model":
         SEM_MODEL,
+    "semantic_model_revision":
+        SEM_MODEL_REVISION,
     "semantic_max_seq_length":
         384,
     "cluster_unit":
