@@ -9,3 +9,5 @@ rank-bm25
 tqdm
 matplotlib
 openpyxl
+lightgbm==4.6.0
+accelerate

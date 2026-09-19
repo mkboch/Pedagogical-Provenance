@@ -66,3 +66,25 @@ Run:
 
 Every released Python source file and both released sequence-policy benchmark
 inputs should return OK.
+
+
+## Final-analysis scripts
+
+The release includes source code for the final matched logistic ablation,
+nested-CV LambdaMART comparison, metadata-reliability analyses, and paired
+Qwen3 generation/evaluation.
+
+These analyses require locally generated upstream files under artifacts.
+Those files are not committed because they include generated outputs,
+candidate-feature matrices, or dependencies derived from course materials
+that are not redistributed.
+
+The public copies preserve the frozen scoring and statistical logic while
+replacing machine-specific absolute paths with repository-local paths.
+
+Source hashes for the frozen scripts are recorded in
+docs/FINAL_ANALYSIS_PROVENANCE.md.
+
+The final semantic evaluation used
+sentence-transformers/all-mpnet-base-v2 with cached revision
+e8c3b32edf5434bc2275fc9bab85f82640a19130.

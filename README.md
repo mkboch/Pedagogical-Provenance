@@ -2,7 +2,7 @@
 
 Research code for:
 
-**PACER: Pedagogical Alignment and Course-Aware Evidence Ranking for Educational RAG in Medical Imaging**
+**PACER: Position-Aware Course Evidence Ranking for Retrieval-Augmented Generation in Medical Imaging Education**
 
 ## Overview
 
@@ -157,6 +157,53 @@ See docs/POSTFREEZE_AUDITS.md.
 
 These utilities operate on locally generated frozen artifacts. The generated
 audit outputs themselves are not committed.
+
+
+## Final Manuscript Analysis Code
+
+The public release includes the code for the final matched ranking,
+metadata-reliability, and paired-generation analyses. Generated result files,
+candidate-feature matrices, model responses, model caches, and source-derived
+course data remain excluded from Git.
+
+### Matched ranking ablation and nonlinear control
+
+    src/ranking/run_position_feature_ablation.py
+    src/evaluation/run_cluster_aware_inference.py
+    src/ranking/run_lambdamart_ablation.py
+
+The frozen logistic source internally names the two-position-feature
+comparator Position-only LR. In the manuscript this is described as
+Position-first LR (RRF tie-break), because score ties inherit the frozen
+candidate ordering, which was verified to be ascending RRF rank within every
+task before this public release.
+
+### Metadata-reliability analysis
+
+    src/ranking/run_one_lecture_metadata_stress.py
+    src/ranking/run_metadata_reliability.py
+    src/ranking/run_lambdamart_metadata_stress.py
+
+These scripts implement the one-lecture test-time metadata perturbations and
+the scenario-specific break-even analysis. The perturbation operates on the
+fixed candidate pool documented in the manuscript and is not an end-to-end
+simulation of an upstream metadata error.
+
+### Paired PACER-to-Qwen3 generation
+
+    src/generation/prepare_lambdamart_generation_inputs.py
+    src/generation/run_qwen3_lambdamart_generation.py
+    src/evaluation/evaluate_lambdamart_qwen3_generation.py
+    src/common/final_generation_reference.py
+
+The helper module contains the historical context formatter, prompt builder,
+and lexical evaluation functions used by the final paired-generation
+analysis.
+
+The final-generation script preserves the local-cache model-loading behavior
+used for the reported experiment.
+
+All generated outputs belong under artifacts, which is ignored by Git.
 
 ## Installation
 

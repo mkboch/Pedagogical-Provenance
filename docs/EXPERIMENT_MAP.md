@@ -109,3 +109,40 @@ paired prediction table.
 
 Generated audit tables are not tracked by Git. See
 docs/POSTFREEZE_AUDITS.md.
+
+
+## Final Manuscript Table-to-Code Map
+
+### Table 2: matched ranking ablation and nonlinear control
+
+    src/ranking/run_position_feature_ablation.py
+    src/evaluation/run_cluster_aware_inference.py
+    src/ranking/run_lambdamart_ablation.py
+
+The first two scripts implement the matched logistic feature-family analysis
+and lecture-clustered inference. The LambdaMART script implements nested
+target-lecture-grouped selection and held-out evaluation for the content-only
+and full PACER feature sets.
+
+### Table 3: metadata-reliability operating envelope
+
+    src/ranking/run_one_lecture_metadata_stress.py
+    src/ranking/run_metadata_reliability.py
+    src/ranking/run_lambdamart_metadata_stress.py
+
+The logistic and LambdaMART stress analyses perturb test-time course-position
+features by one lecture while retaining the fixed candidate pool.
+
+### Table 5: paired Qwen3 end-to-end comparison
+
+    src/generation/prepare_lambdamart_generation_inputs.py
+    src/generation/run_qwen3_lambdamart_generation.py
+    src/evaluation/evaluate_lambdamart_qwen3_generation.py
+    src/common/final_generation_reference.py
+
+The preparation script constructs the matched content-only and full-PACER
+evidence contexts. The generation script performs deterministic Qwen3-8B
+generation, and the evaluator performs the paired lexical and semantic
+analysis with target-lecture-clustered inference.
+
+Generated result files are intentionally excluded from the repository.

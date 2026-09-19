@@ -1,0 +1,28 @@
+# Final Analysis Source Provenance
+
+The final manuscript analyses were run from a frozen source snapshot on 2026-09-18. The SHA-256 values below identify the exact analysis source files collected from that snapshot.
+
+The public copies preserve the scoring and statistical logic while replacing machine-specific absolute paths with repository-local paths. The generation helper module was extracted from the historical runtime source identified below.
+
+No generated result tables, candidate matrices, model responses, model caches, or course-derived benchmark data are included here.
+
+Frozen analysis source hashes:
+
+4524bd42bda8aa9d86c44608de85b84ca567807bb354cae0667c539b9366d78a  scripts/evaluate_lambdamart_qwen3_generation.py
+84a5b2212a46b51f4c5db4924fcdbfe41d150c7215d4b0199e6de33764cea6e9  scripts/prepare_lambdamart_generation_inputs.py
+23d85523f68eb4f775017dfd778bbadae0b775e38a6b5ea7a3adf5670ec513c3  scripts/run_cluster_aware_inference.py
+51fbc56781b75d05bb0bee828deae6bad9640a3e6fde4c3c3203c7fe2c15ebc5  scripts/run_course_position_ranker_leakfree_reproduction.py
+cb87f619eeefebe4ac9d29d5a569a8ac714858acd85e61b773e1c7ce50357e9a  scripts/run_lambdamart_ablation.py
+eca2e04c6a4d2b617d4a8e477457318f7096316fc6bf3e607cfece3763f6b33b  scripts/run_lambdamart_metadata_stress.py
+150d8a5863fceedba6844583b4caed403fb694b9762b96a32a6133e12755c327  scripts/run_metadata_reliability.py
+58cd8e45be63d03801f95a8f89e974beab5895f792ebc28b727cac608b674a37  scripts/run_one_lecture_metadata_stress.py
+873e4829774435fdb8208bae8a9a2fb3a25dfdd0d0c901e35af11adc342e0947  scripts/run_position_feature_ablation.py
+ba5414044f3285e0374ca7ad77bbc91308a4b2cc83fdecbe1bad60f809951782  scripts/run_qwen3_lambdamart_generation.py
+
+Historical generation runtime source SHA-256:
+
+482e3fd3136b98fef10c2323a1db9200780af8e4a79bd058b7665c1532a5a079
+
+Public extracted generation helper SHA-256:
+
+e672fc0c6d6bed46eb5760aeb5292d1bc7b29b64709b5a9db7ba8004f10cbbb6
