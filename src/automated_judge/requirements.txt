@@ -1,0 +1,9 @@
+# Environment used for the automated-judge analysis.
+# Install a CUDA-compatible PyTorch build appropriate for the local system.
+openai==2.44.0
+tiktoken
+numpy
+pandas
+scipy
+transformers==5.12.1
+vllm==0.20.0

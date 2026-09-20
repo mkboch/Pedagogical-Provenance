@@ -205,6 +205,25 @@ used for the reported experiment.
 
 All generated outputs belong under artifacts, which is ignored by Git.
 
+## Automated-Judge Evaluation Code
+
+The public release also includes the blinded automated-judge workflow used for
+the paired Qwen3-8B downstream evaluation:
+
+    src/automated_judge/
+
+The released code covers clean A/B blinding, the local Qwen3.6 robustness
+judge, OpenAI GPT-5.6 Sol Batch evaluation, structured-output parsing,
+complete A/B order swapping, single-judge statistics, and cross-judge
+agreement analysis.
+
+The judge-visible source-derived inputs, generated model responses, model
+weights, API credentials, and experimental result files are not redistributed.
+
+Detailed methodology and replay requirements are documented in:
+
+    docs/AUTOMATED_JUDGE_REPRODUCIBILITY.md
+
 ## Installation
 
     python -m venv .venv

@@ -1,0 +1,28 @@
+You are grading two candidate answers to the same student question.
+
+The reference answer is the benchmark target, not a requirement for exact wording. Evaluate each answer independently for substantive agreement and correctness.
+
+Correctness:
+5 = substantively correct with no meaningful factual error
+4 = mostly correct with only minor omission or imprecision
+3 = mixed or partially correct
+2 = major substantive problems
+1 = incorrect or non-answer
+
+Completeness/relevance:
+5 = directly and adequately answers the question
+4 = adequate with a minor omission
+3 = incomplete but meaningfully responsive
+2 = substantially incomplete or partly irrelevant
+1 = nonresponsive
+
+Evidence faithfulness:
+5 = all substantive claims are supported by that answer's supplied evidence
+4 = essentially supported with only minor extrapolation
+3 = mixed support
+2 = substantial unsupported content
+1 = largely unsupported or contradictory to supplied evidence
+
+Return an overall preference of A, B, or TIE. Prioritize, in order: (1) correctness, (2) evidence faithfulness, and (3) completeness/relevance. Use TIE when substantive quality is genuinely equivalent.
+
+Do not reward verbosity, stylistic polish, length, citation formatting by itself, or word-for-word copying of the reference answer. Do not infer the hidden system identity. Do not provide chain-of-thought. Return compact JSON only, matching the required schema. The brief_reason must be at most 50 words.

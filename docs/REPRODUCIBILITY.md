@@ -88,3 +88,30 @@ docs/FINAL_ANALYSIS_PROVENANCE.md.
 The final semantic evaluation used
 sentence-transformers/all-mpnet-base-v2 with cached revision
 e8c3b32edf5434bc2275fc9bab85f82640a19130.
+
+## Automated-judge analysis
+
+The release includes the path-portable code for the blinded downstream
+automated-judge analysis under:
+
+    src/automated_judge/
+
+The reported evaluation used OpenAI GPT-5.6 Sol as the primary cross-family
+automated judge and Qwen/Qwen3.6-35B-A3B at revision
+995ad96eacd98c81ed38be0c5b274b04031597b0 as a secondary same-family
+robustness judge.
+
+Both judges used the same randomized condition blinding, the same scoring
+rubric, 600 primary judgments, and a complete 600-item A/B-swapped
+order-sensitivity pass. The scripts verify that substantive question,
+reference-answer, evidence, and generated-answer text is not modified during
+blinding.
+
+Primary inferential statistics use only the first randomized orientation.
+The swapped orientation is reported only as an order-sensitivity diagnostic.
+Judge scores and p-values are not pooled.
+
+The source-derived judge inputs, raw judge responses, generated Qwen answers,
+candidate matrices, and model weights are not redistributed. Complete replay
+therefore requires authorized local copies of the fixed non-redistributed
+inputs whose hashes are checked by the released scripts.
